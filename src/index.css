@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cyberpunk/Dark Web Theme */
+body {
+  @apply bg-black text-white antialiased;
+}
+
+button {
+  @apply transition-transform duration-300;
+}
+
+/* Neon Glow Effect */
+.neon {
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+/* Background Gradient */
+.bg-cyberpunk {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+/* Card Style */
+.card {
+  @apply bg-zinc-900 rounded-lg shadow-lg p-4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+:root {
+  --bg: theme(colors.slate.50);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.card {
+  @apply bg-white dark:bg-zinc-900 rounded-2xl shadow-md p-4;
+}
+
+.btn-ghost {
+  @apply bg-gradient-to-r from-accent-50 to-white dark:from-zinc-800 dark:to-zinc-900 rounded-full px-6 py-3 shadow-sm;
+}
+
+.micro-anim {
+  transition: transform 180ms cubic-bezier(.2,.9,.3,1), box-shadow 180ms;
+}
+.micro-anim:active { transform: translateY(2px) scale(.995); }
+
+.focus-ring:focus { outline: 3px solid rgba(14,165,233,.18); outline-offset: 2px; }

@@ -53,18 +53,25 @@ export default function Game1(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white flex flex-col items-center justify-center relative">
-      {/* Bouton Revenir en arrière */}
+    <div 
+      className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white flex flex-col items-center justify-center relative"
+      style={{
+        paddingTop: "env(safe-area-inset-top)",
+        paddingLeft: "env(safe-area-inset-left)",
+        paddingRight: "env(safe-area-inset-right)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+      }}
+    >
+      {/* Bouton Revenir en arrière - Mobile-friendly */}
       {!isSpinning && (
         <button
           onClick={goBack}
-          className="fixed top-3 left-3 sm:top-4 sm:left-4 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gray-800/90 text-white shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500/50 active:scale-95 transition-all duration-200 z-50 flex items-center justify-center"
+          className="fixed top-3 left-3 w-12 h-12 rounded-full bg-gray-800/90 text-white shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500/50 active:scale-95 transition-all duration-200 z-50 flex items-center justify-center"
           style={{
             minWidth: '48px',
             minHeight: '48px',
-            paddingTop: "max(12px, env(safe-area-inset-top))",
-            paddingLeft: "max(12px, env(safe-area-inset-left))",
           }}
+          aria-label="Retour à l'accueil"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
